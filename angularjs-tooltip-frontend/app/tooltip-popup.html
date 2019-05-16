@@ -1,0 +1,32 @@
+<div class="tooltip {{placement}}" ng-class="{ in: isOpen, fade: animation() }" >
+	<div class="tooltip-arrow"></div>
+	<div class="tooltip-inner">
+		<div>
+			<table>
+				<tr>
+					<td>Дата рождения</td>
+					<td>{{ birthdate | date:'MM/dd/yyyy' }}</td>
+				</tr>
+			</table>
+		</div>
+
+		<div ng-show="additionalInfo" >
+			<md-progress-circular ng-show="isLoading" md-mode="indeterminate"></md-progress-circular>
+			<table ng-show="!isLoading">
+				<tr>
+					<td>Рост</td>
+					<td>{{ userServerData.height }}</td>
+				</tr>
+				<tr>
+					<td>Вес</td>
+					<td>{{ userServerData.weight }}</td>
+				</tr>
+				<tr>
+					<td>Спортсмен</td>
+					<td>{{ userServerData.isSportsman ? 'Да' : 'Нет' }}</td>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="angularjs-starter">
+
+<head lang="en">
+	<meta charset="utf-8">
+	<title>Custom Tooltip</title>
+	<!-- Angular Material requires Angular.js Libraries -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+	<!-- Angular Material Library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+	<script>
+		document.write('<base href="' + document.location + '" />');
+	</script>
+	<script src="../static/js/tooltip.js"></script>
+	<script src="../static/js/app.js"></script>
+	<link href="../static/css/app.css" rel="stylesheet">
+</head>
+
+<body ng-controller="MainCtrl">
+	<div>Tooltip Text:
+		<input ng-model="tooltip"></input>
+	</div>
+
+	<ul>
+		<li><span tooltip="{{tooltip}}" tooltip-delay="1000" >Hover over me.</span></li>
+		<li><span tooltip-animation="true" tooltip-placement="right" tooltip="{{tooltip}}" tooltip-delay="2000">Hover over me. I fade.</span></li>
+		<li><span tooltip-placement="left" tooltip="{{tooltip}}" tooltip-delay="3000">Hover over me. Left</span></li>
+		<li><span tooltip-placement="right" tooltip="{{tooltip}}" tooltip-delay="3000">Hover over me. Right</span></li>
+		<li><span tooltip-placement="bottom" tooltip="{{tooltip}}">Hover over me. Bottom</span></li>
+		<li><span tooltip-placement="top" tooltip="{{tooltip}}">Hover over me. Top</span></li>
+	</ul>
+</body>
+
+</html>
